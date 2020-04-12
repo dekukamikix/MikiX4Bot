@@ -34,19 +34,19 @@ from userbot.events import register
 from userbot.modules.upload_download import humanbytes
 
 
-async def subprocess_run(cmd, megadl):
-    subproc = Popen(cmd, stdout=PIPE, stderr=PIPE,
-                    shell=True, universal_newlines=True)
-    talk = subproc.communicate()
-    exitCode = subproc.returncode
-    if exitCode != 0:
-        await megadl.edit(
-            '```An error was detected while running the subprocess:\n'
-            f'exit code: {exitCode}\n'
-            f'stdout: {talk[0]}\n'
-            f'stderr: {talk[1]}```')
-        return
-    return talk
+#async def subprocess_run(cmd, megadl):
+#    subproc = Popen(cmd, stdout=PIPE, stderr=PIPE,
+#                    shell=True, universal_newlines=True)
+#    talk = subproc.communicate()
+#    exitCode = subproc.returncode
+#    if exitCode != 0:
+#        await megadl.edit(
+#            '```An error was detected while running the subprocess:\n'
+#            f'exit code: {exitCode}\n'
+#            f'stdout: {talk[0]}\n'
+#            f'stderr: {talk[1]}```')
+#        return
+#    return talk
 
 
 @register(outgoing=True, pattern=r"^.mega(?: |$)(.*)")
